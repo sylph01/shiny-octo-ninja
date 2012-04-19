@@ -1,0 +1,11 @@
+<h1>ほげ</h1>
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+<%= image_tag url_for(:controller => :items,:action => 'show_image', :id => @item.id),
+        :alt => "画像", :title => "画像", :size => '400x300' %><br />
+<%= form_tag :action => :answer do %>
+<%= hidden_field_tag :id, @item.id %>
+こたえ：<%= text_field_tag :answer %>
+<%= submit_tag "送信" %>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @item.answer %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @item.message %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag url_for(:action => 'show_image', :id => @item.id),
+        :alt => "画像", :title => "画像", :size => '400x300' %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%= @item.content_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
